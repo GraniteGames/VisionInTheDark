@@ -41,6 +41,28 @@ class Player(object):
             if dy != 0:
                 self.move_single_axis(0, dy)
 
+        def move_single_axis(self, dx, dy):
+
+            self.rect.x += dx
+            self.rect.y += dy
+
+            for wall in walls:
+                if self.rect.colliderect(wall.rect):
+                    if dx > 0:  # Moving right; Hit the left side of the wall
+                        self.rect.right = wall.rect.left
+                    if dx < 0:  # Moving left; Hit the right side of the wall
+                        self.rect.left = wall.rect.right
+                    if dy > 0:  # Moving down; Hit the top side of the wall
+                        self.rect.bottom = wall.rect.top
+                    if dy < 0:  # Moving up; Hit the bottom side of the wall
+                        self.rect.top = wall.rect.bottom
+
+
+# Nice class to hold a wall rect
+class Wall(object):
+    def __init__(self, pos):
+        walls.append(self)
+        self.rect = pygame.Rect(pos[0], pos[1], 16, 16)
 
 '''Game loop'''
 done = False

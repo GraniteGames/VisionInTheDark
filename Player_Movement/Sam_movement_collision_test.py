@@ -4,6 +4,7 @@ from pygame.locals import *
 # initiate pygame
 pygame.init()
 
+# limiting the FPS with this fps clock
 FPS = 60
 fpsClock = pygame.time.Clock()
 
@@ -15,6 +16,7 @@ screen_height = 64 * 10
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 
+# Player class
 class Player(pygame.sprite.Sprite):
     width = 64
     height = 64
@@ -29,6 +31,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
 
+# Wall class
 class Wall:
     pos = Vector2(128, 128)
     col = pygame.Rect(pos.x - 4, pos.y - 4, 68, 68)
