@@ -14,6 +14,7 @@ Vector2 = pygame.math.Vector2
 screen_width = 64 * 15
 screen_height = 64 * 10
 screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Collision Detection Testing")
 
 
 # Player class
@@ -30,13 +31,21 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.Surface([Player.width, Player.height])
         self.rect = self.image.get_rect()
 
+    def update(self):
+        self.rect.center = (Player.pos.x + 32, Player.pos.y + 32)
+
 
 # Wall class
-class Wall:
+class Wall(pygame.sprite.Sprite):
     pos = Vector2(128, 128)
     col = pygame.Rect(pos.x - 4, pos.y - 4, 68, 68)
     image = pygame.image.load('wall_tile.png').convert_alpha()
-    # def __init__(self):
+
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface([64, 64])
+        self.rect = self.image.get_rect()
+        self.rect.center = (Wall.pos.x + 32, Wall.pos.y + 32)
 
 
 def player_controller():
@@ -46,14 +55,19 @@ def player_controller():
     # horizontal movement
     if pressed_keys[K_a]:
         Player.pos.x -= Player.speed
+        if pygame.sprite.collide_rect(player, wall):
+            Player.pos.x += Player.speed
     if pressed_keys[K_d]:
         Player.pos.x += Player.speed
+        #if pygame.sprite.collide_rect(player, wall):
+        #    Player.pos.x -= Player.speed
 
     # vertical movement
     if pressed_keys[K_w]:
         Player.pos.y -= Player.speed
     if pressed_keys[K_s]:
         Player.pos.y += Player.speed
+
 
 # game while loop
 running = True
@@ -64,7 +78,14 @@ while running:
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
 
+    player = Player()
+    wall = Wall()
+
+    player.update()
     player_controller()
+
+    if pygame.sprite.collide_rect(player, wall):
+        print "collided!"
 
     # horizontal boundaries
     if Player.pos.x > screen_width - Player.width:
