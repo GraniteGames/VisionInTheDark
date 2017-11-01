@@ -1,6 +1,8 @@
 import pygame
+from screen_settings import *
 from player_class import *
 from movement import *
+from map_genreator import *
 
 # initiate pygame
 pygame.init()
@@ -9,13 +11,9 @@ pygame.init()
 FPS = 60
 fpsClock = pygame.time.Clock()
 
-# create display
-screen_width = 64 * 15
-screen_height = 64 * 10
-screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("The Game")
-
 player = Player(screen_width / 2 - 32, screen_height / 2 - 32)
+
+generate_a_map()
 
 # game while loop
 running = True
@@ -25,9 +23,11 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+            generate_a_map()
 
-    # window creation and player blitting
-    screen.fill((0, 0, 0))
+    # running core gameplay elements
+    render_map()
     player.render(screen)
     player_movement(player)
 
