@@ -2,7 +2,6 @@ import pygame
 from player_class import *
 from movement import *
 
-
 # initiate pygame
 pygame.init()
 
@@ -27,14 +26,10 @@ while running:
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
 
-
-
-
     # window creation and player blitting
     screen.fill((0, 0, 0))
-    player_movement(player)
     player.render(screen)
-
+    player_movement(player)
 
     pygame.display.update()
     fpsClock.tick(FPS)
