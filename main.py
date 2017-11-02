@@ -3,6 +3,7 @@ from screen_settings import *
 from player_class import *
 from movement import *
 from map_genreator import *
+from vision_mechanic import *
 
 # initiate pygame
 pygame.init()
@@ -27,7 +28,8 @@ while running:
             generate_a_map()
 
     # running core gameplay elements
-    render_map()
+    #render_map()
+    vision_mechanic(int(round(player.pos.x + 32)), int(round(player.pos.y + 32)))
     player.render(screen)
     player_movement(player)
 
