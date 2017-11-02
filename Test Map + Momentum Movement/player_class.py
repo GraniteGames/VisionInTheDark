@@ -3,23 +3,16 @@ import pygame
 Vector2 = pygame.math.Vector2
 
 class Player(pygame.sprite.Sprite):
-    speed = 3
-    mass = 2
-    max_speed = 8
+    speed_limit = 5
+    milliseconds = 100
 
     def __init__(self, current_pos_x, current_pos_y):
         pygame.sprite.Sprite.__init__(self)
-        """self.pos = Vector2(current_pos_x, current_pos_y)
-        self.vel = Player.speed * self.mass
-        self.momentum = self.mass * self.vel"""
 
         self.speed_h = 0
         self.speed_v = 0
         self.increase = 0.5
-        self.speed_limit = 5
         self.pos = Vector2(current_pos_x, current_pos_y)
-
-        self.milliseconds = 100
 
         self.time_elapsed_since_last_action_up = 0
         self.time_elapsed_since_last_action_down = 0
@@ -41,6 +34,11 @@ class Player(pygame.sprite.Sprite):
         self.time_elapsed_since_last_action_left += self.dt_left
         self.time_elapsed_since_last_action_right += self.dt_right
 
+
     def render(self, screen):
         player_image = pygame.image.load('spr_player.png').convert_alpha()
         screen.blit(player_image, (self.pos.x, self.pos.y))
+        self.player_image = pygame.Surface([64, 64])
+        self.rect = self.player_image.get_rect()
+        self.rect.center = (self.pos.x + 32, self.pos.y + 32)
+

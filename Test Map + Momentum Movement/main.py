@@ -14,22 +14,25 @@ fpsClock = pygame.time.Clock()
 player = Player(screen_width / 2 - 32, screen_height / 2 - 32)
 
 generate_a_map()
-
+wall = Wall(64,64)
 # game while loop
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            a
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
             generate_a_map()
 
+
     # running core gameplay elements
     render_map()
     player.render(screen)
-    player_movement(player)
+    player_movement(player, wall)
+
+
 
     pygame.display.update()
     fpsClock.tick(FPS)
