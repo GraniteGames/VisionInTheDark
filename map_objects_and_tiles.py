@@ -34,3 +34,17 @@ class Player_spawn_tile(pygame.sprite.Sprite):
     def render(self, screen):
         player_image = pygame.image.load('map_tiles/floor_tile.png').convert_alpha()
         screen.blit(player_image, (self.pos.x, self.pos.y))
+
+
+class Grav_Well(pygame.sprite.Sprite):
+    def __init__(self, (current_pos_x, current_pos_y)):
+        pygame.sprite.Sprite.__init__(self)
+        self.pos = Vector2(current_pos_x, current_pos_y)
+        self.image = pygame.Surface([64, 64])
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.pos.x + 32, self.pos.y + 32)
+
+
+    def render(self, screen):
+        grav_well_image = pygame.image.load('map_tiles/grav_well_tile.png').convert_alpha()
+        screen.blit(grav_well_image, (self.pos.x, self.pos.y))

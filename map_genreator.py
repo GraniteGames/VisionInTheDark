@@ -8,15 +8,16 @@ Vector2 = pygame.math.Vector2
 map_image = pygame.Surface((screen_width, screen_height))
 
 wall_list = []
+grav_well_list = []
 
 def generate_a_map():
     pos_x = 0
     pos_y = 0
 
-    map_matrix = numpy.random.randint(3, size=(screen_height / 64, screen_width / 64))
+    map_matrix = numpy.random.randint(4, size=(screen_height / 64, screen_width / 64))
     player_spawn = False
     generate_a_map.list_of_wall_pos = []
-
+    generate_a_map.list_of_grav_well_pos = []
     generate_a_map.player_spawn_pos = (0, 0)
 
     for row_num, row_list in enumerate(map_matrix):
@@ -55,7 +56,13 @@ def generate_a_map():
                 wall_list.append(wall)
             elif tile_num[1] == 2:
                 player_tile.render(map_image)
-                generate_a_map.player_spawn_pos = (pos_x,pos_y)
+                generate_a_map.player_spawn_pos = (pos_x, pos_y)
+            elif tile_num[1] == 3:
+                generate_a_map.grav_well_pos = (pos_x, pos_y)
+                grav_well = Grav_Well(generate_a_map.grav_well_pos)
+                grav_well.render(map_image)
+                generate_a_map.list_of_grav_well_pos.append(generate_a_map.grav_well_pos)
+                grav_well_list.append(grav_well)
             elif tile_num[1] == 0:
                 floor.render(map_image)
 

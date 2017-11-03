@@ -16,7 +16,7 @@ generate_a_map()
 player = Player(generate_a_map.player_spawn_pos)
 
 toggle_state = False
-
+global running
 # game while loop
 running = True
 while running:
@@ -46,7 +46,7 @@ while running:
     # running core gameplay elements
 
     player.render(screen)
-    player_movement(player, wall_list)
+    player_movement(player, wall_list, grav_well_list)
 
     pygame.display.update()
     fpsClock.tick(FPS)
