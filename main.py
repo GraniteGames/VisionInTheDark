@@ -38,17 +38,15 @@ while running:
             toggle_state = False
             render_map()
 
-    # running core gameplay elements
-
-    if toggle_state == False:
+    if not toggle_state:
         vision_mechanic(int(round(player.pos.x + 32)), int(round(player.pos.y + 32)))
-    if toggle_state == True:
+    if toggle_state:
         render_map()
 
-    wall = Wall(generate_a_map.spawn_walls)
+    # running core gameplay elements
 
     player.render(screen)
-    player_movement(player, wall)
+    player_movement(player, wall_list)
 
     pygame.display.update()
     fpsClock.tick(FPS)

@@ -7,16 +7,17 @@ from screen_settings import *
 Vector2 = pygame.math.Vector2
 map_image = pygame.Surface((screen_width, screen_height))
 
+wall_list = []
 
 def generate_a_map():
     pos_x = 0
     pos_y = 0
 
     map_matrix = numpy.random.randint(3, size=(screen_height / 64, screen_width / 64))
-    generate_a_map.player_spawn_pos = (0,0)
-    generate_a_map.spawn_walls = (0,0)
-
     player_spawn = False
+    generate_a_map.list_of_wall_pos = []
+
+    generate_a_map.player_spawn_pos = (0, 0)
 
     for row_num, row_list in enumerate(map_matrix):
         for tile_num in enumerate(row_list):
@@ -44,12 +45,14 @@ def generate_a_map():
 # Creates the map image from the map matrix
     for row_num, row_list in enumerate(map_matrix):
         for tile_num in enumerate(row_list):
-            wall = Wall((pos_x, pos_y))
             floor = Floor(pos_x, pos_y)
             player_tile = Player_spawn_tile(pos_x, pos_y)
             if tile_num[1] == 1:
+                generate_a_map.wall_pos = (pos_x, pos_y)
+                wall = Wall(generate_a_map.wall_pos)
                 wall.render(map_image)
-                generate_a_map.spawn_walls = (pos_x, pos_y)
+                generate_a_map.list_of_wall_pos.append(generate_a_map.wall_pos)
+                wall_list.append(wall)
             elif tile_num[1] == 2:
                 player_tile.render(map_image)
                 generate_a_map.player_spawn_pos = (pos_x,pos_y)

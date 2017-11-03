@@ -1,7 +1,6 @@
 import pygame
 from pygame.locals import *
 
-
 Vector2 = pygame.math.Vector2
 clock = pygame.time.Clock()
 
@@ -22,39 +21,39 @@ def player_movement(Player, wall):
 
     # movement up
     if Player.time_elapsed_since_last_action_up > Player.milliseconds:
-        if pressed_keys[K_w]:
+        if pressed_keys[K_w] or pressed_keys[K_UP]:
             Player.speed_v -= Player.increase
             Player.time_elapsed_since_last_action_up = 0
             if Player.speed_v <= - Player.speed_limit:
                 Player.speed_v = - Player.speed_limit
-            print Player.speed_v
+            #print Player.speed_v
 
     # movement down
     if Player.time_elapsed_since_last_action_down > Player.milliseconds:
-        if pressed_keys[K_s]:
+        if pressed_keys[K_s] or pressed_keys[K_DOWN]:
             Player.speed_v += Player.increase
             Player.time_elapsed_since_last_action_down = 0
             if Player.speed_v >= Player.speed_limit:
                 Player.speed_v = Player.speed_limit
-            print Player.speed_v
+            #print Player.speed_v
 
     # movement left
     if Player.time_elapsed_since_last_action_left > Player.milliseconds:
-        if pressed_keys[K_a]:
+        if pressed_keys[K_a] or pressed_keys[K_LEFT]:
             Player.speed_h -= Player.increase
             Player.time_elapsed_since_last_action_left = 0
             if Player.speed_h <= - Player.speed_limit:
                 Player.speed_h = - Player.speed_limit
-            print Player.speed_h
+            #print Player.speed_h
 
     # movement right
     if Player.time_elapsed_since_last_action_right > Player.milliseconds:
-        if pressed_keys[K_d]:
+        if pressed_keys[K_d] or pressed_keys[K_RIGHT]:
             Player.speed_h += Player.increase
             Player.time_elapsed_since_last_action_right = 0
             if Player.speed_h >= Player.speed_limit:
                 Player.speed_h = Player.speed_limit
-            print Player.speed_h
+            #print Player.speed_h
 
     collision_detect(Player, wall)
 
@@ -62,24 +61,25 @@ def player_movement(Player, wall):
     Player.pos.y += Player.speed_v
 
 
-def collision_detect(Player, Wall):
+def collision_detect(Player, wall_list):
     collision_rect = Player.rect
 
     collision_rect.left += Player.speed_h
     collision_rect.right += Player.speed_h
     collision_rect.top += Player.speed_v
     collision_rect.bottom += Player.speed_v
-    if collision_rect.colliderect(Wall.rect):
-        print "collided!"
+    for wall in wall_list:
+        if collision_rect.colliderect(wall.rect):
+            #print "collided!"
 
-        if Player.rect.x < Wall.rect.x:
-            Player.speed_h = -0.5
+            if Player.rect.x < wall.rect.x:
+                Player.speed_h = -0.5
 
-        elif Player.rect.x > Wall.rect.x:
-            Player.speed_h = 0.5
+            elif Player.rect.x > wall.rect.x:
+                Player.speed_h = 0.5
 
-        if Player.rect.y < Wall.rect.y:
-            Player.speed_v = -0.5
+            if Player.rect.y < wall.rect.y:
+                Player.speed_v = -0.5
 
-        elif Player.rect.y > Wall.rect.y:
-            Player.speed_v = 0.5
+            elif Player.rect.y > wall.rect.y:
+                Player.speed_v = 0.5

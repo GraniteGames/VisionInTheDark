@@ -38,6 +38,6 @@ class Player(pygame.sprite.Sprite):
     def render(self, screen):
         player_image = pygame.image.load('spr_player.png').convert_alpha()
         screen.blit(player_image, (self.pos.x, self.pos.y))
-        self.player_image = pygame.Surface([64, 64])
+        self.player_image = pygame.Surface([45, 45])
         self.rect = self.player_image.get_rect()
         self.rect.center = (self.pos.x + 32, self.pos.y + 32)
