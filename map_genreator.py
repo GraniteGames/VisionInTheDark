@@ -10,6 +10,7 @@ map_image = pygame.Surface((screen_width, screen_height))
 wall_list = []
 grav_well_list = []
 
+# Creates a random map matrix with rules
 def generate_a_map():
     pos_x = 0
     pos_y = 0
@@ -43,6 +44,9 @@ def generate_a_map():
 
     print map_matrix
 
+    del wall_list[:]
+    del grav_well_list[:]
+    
 # Creates the map image from the map matrix
     for row_num, row_list in enumerate(map_matrix):
         for tile_num in enumerate(row_list):
