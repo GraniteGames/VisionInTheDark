@@ -17,8 +17,10 @@ def generate_a_map():
 
     map_matrix = numpy.random.randint(4, size=(screen_height / 64, screen_width / 64))
     player_spawn = False
+
     generate_a_map.list_of_wall_pos = []
     generate_a_map.list_of_grav_well_pos = []
+
     generate_a_map.player_spawn_pos = (0, 0)
 
     for row_num, row_list in enumerate(map_matrix):
@@ -35,6 +37,10 @@ def generate_a_map():
             elif random.random() < 0.2 and map_matrix.item(tile_left) == 1:
                 map_matrix.itemset(current_pos, 1)
 
+            elif random.random() < 0.85 and tile_num[1] == 3:
+                map_matrix.itemset(current_pos, 0)
+                print "it worked"
+
             elif random.random() < 0.6 or (player_spawn == True and tile_num[1] == 2):
                 map_matrix.itemset(current_pos, 0)
 
@@ -46,27 +52,31 @@ def generate_a_map():
 
     del wall_list[:]
     del grav_well_list[:]
-    
+
 # Creates the map image from the map matrix
     for row_num, row_list in enumerate(map_matrix):
         for tile_num in enumerate(row_list):
             floor = Floor(pos_x, pos_y)
             player_tile = Player_spawn_tile(pos_x, pos_y)
+
             if tile_num[1] == 1:
                 generate_a_map.wall_pos = (pos_x, pos_y)
                 wall = Wall(generate_a_map.wall_pos)
                 wall.render(map_image)
                 generate_a_map.list_of_wall_pos.append(generate_a_map.wall_pos)
                 wall_list.append(wall)
+
             elif tile_num[1] == 2:
                 player_tile.render(map_image)
                 generate_a_map.player_spawn_pos = (pos_x, pos_y)
+
             elif tile_num[1] == 3:
                 generate_a_map.grav_well_pos = (pos_x, pos_y)
                 grav_well = Grav_Well(generate_a_map.grav_well_pos)
                 grav_well.render(map_image)
                 generate_a_map.list_of_grav_well_pos.append(generate_a_map.grav_well_pos)
                 grav_well_list.append(grav_well)
+
             elif tile_num[1] == 0:
                 floor.render(map_image)
 

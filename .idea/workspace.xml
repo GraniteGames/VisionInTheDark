@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf43960f-0dab-4b88-b442-a6356f84ab90" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/movement.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map_genreator.py" afterPath="$PROJECT_DIR$/map_genreator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map_objects_and_tiles.py" afterPath="$PROJECT_DIR$/map_objects_and_tiles.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player_class.py" afterPath="$PROJECT_DIR$/player_class.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/screen_settings.py" afterPath="$PROJECT_DIR$/screen_settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vision_mechanic.py" afterPath="$PROJECT_DIR$/vision_mechanic.py" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +36,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="168">
               <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -50,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_genreator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map_genreator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map_genreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+            <state relative-caret-position="321">
+              <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -65,13 +60,12 @@
       <file leaf-file-name="map_objects_and_tiles.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map_objects_and_tiles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
               <folding>
-                <element signature="e#85#558#0" expanded="false" />
-                <element signature="e#600#924#0" expanded="false" />
-                <element signature="e#978#1304#0" expanded="false" />
-                <element signature="e#1350#1838#0" expanded="false" />
+                <element signature="e#1229#1553#0" expanded="false" />
+                <element signature="e#1607#1933#0" expanded="false" />
+                <element signature="e#1979#2467#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,18 +81,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player_class.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="player_class.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/player_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="363">
+              <caret line="128" column="39" lean-forward="true" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#246#1255#0" expanded="false" />
-                <element signature="e#1296#1586#0" expanded="false" />
                 <element signature="e#1645#4023#0" expanded="false" />
-                <element signature="e#4107#5280#0" expanded="false" />
-                <element signature="e#5382#6223#0" expanded="false" />
+                <element signature="e#5442#6283#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -148,12 +140,12 @@
         <option value="$PROJECT_DIR$/player_movement.py" />
         <option value="$PROJECT_DIR$/FogMechanic.py" />
         <option value="$PROJECT_DIR$/movement.py" />
-        <option value="$PROJECT_DIR$/player_class.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/vision_mechanic.py" />
         <option value="$PROJECT_DIR$/screen_settings.py" />
         <option value="$PROJECT_DIR$/map_objects_and_tiles.py" />
         <option value="$PROJECT_DIR$/map_genreator.py" />
+        <option value="$PROJECT_DIR$/player_class.py" />
       </list>
     </option>
   </component>
@@ -163,7 +155,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="256" />
     <option name="y" value="-10" />
     <option name="width" value="974" />
@@ -555,7 +547,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22395833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -600,8 +592,13 @@
           <url>file:D://D:/DIgital/Uni stuff/COMP150/Assignments/VisionInTheDark/Movement2.py</url>
           <line>15</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/player_class.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -658,37 +655,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vision_mechanic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#246#1255#0" expanded="false" />
-            <element signature="e#1296#1586#0" expanded="false" />
-            <element signature="e#1645#4023#0" expanded="false" />
-            <element signature="e#4107#5280#0" expanded="false" />
-            <element signature="e#5382#6223#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,23 +675,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map_objects_and_tiles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
           <folding>
-            <element signature="e#85#558#0" expanded="false" />
-            <element signature="e#600#924#0" expanded="false" />
-            <element signature="e#978#1304#0" expanded="false" />
-            <element signature="e#1350#1838#0" expanded="false" />
+            <element signature="e#1229#1553#0" expanded="false" />
+            <element signature="e#1607#1933#0" expanded="false" />
+            <element signature="e#1979#2467#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map_genreator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        <state relative-caret-position="321">
+          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="128" column="39" lean-forward="true" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#246#1255#0" expanded="false" />
+            <element signature="e#1645#4023#0" expanded="false" />
+            <element signature="e#5442#6283#0" expanded="false" />
           </folding>
         </state>
       </provider>

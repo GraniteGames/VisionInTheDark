@@ -42,7 +42,7 @@ class Player(pygame.sprite.Sprite):
         screen.blit(player_image, (self.pos.x, self.pos.y))
         self.player_image = pygame.Surface([32, 32])
         self.rect = self.player_image.get_rect()
-        self.rect.center = (self.pos.x + 32, self.pos.y + 32)
+        self.rect.center = (self.pos.x + 26, self.pos.y + 26)
 
     def player_movement(self, wall, grav_well):
 
@@ -124,6 +124,7 @@ class Player(pygame.sprite.Sprite):
                 if self.speed_v < -4.0:
                     print "DEAD"
 
+                # bounces player off of wall when colliding
                 if self.rect.x < wall.rect.x:
                     self.speed_h = -0.5
 
