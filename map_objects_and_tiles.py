@@ -44,7 +44,6 @@ class Grav_Well(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (self.pos.x + 32, self.pos.y + 32)
 
-
     def render(self, screen):
         grav_well_image = pygame.image.load('map_tiles/grav_well_tile.png').convert_alpha()
         screen.blit(grav_well_image, (self.pos.x, self.pos.y))

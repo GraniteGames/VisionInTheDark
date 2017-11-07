@@ -1,7 +1,6 @@
 import pygame
 from screen_settings import *
 from player_class import *
-from movement import *
 from map_genreator import *
 from vision_mechanic import *
 
@@ -46,7 +45,7 @@ while running:
     # running core gameplay elements
 
     player.render(screen)
-    player_movement(player, wall_list, grav_well_list)
+    player.player_movement(wall_list, grav_well_list)
 
     pygame.display.update()
     fpsClock.tick(FPS)
